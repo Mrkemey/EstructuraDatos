@@ -18,7 +18,7 @@ public class General {
         for (int i = 0; i < n; i++) {
             R[i][0] = i;
             R[i][1] = (int) (2 * (Math.pow(i, 2)) + 2);
-            //hola
+            //holas
         }
 
         return R;
