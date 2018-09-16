@@ -42,7 +42,7 @@ public class General {
         int c = 0;
         for (; a != 0; a /= 2,b*=2) {
             if (a % 2 != 0) {
-                c = c + b;
+                c = c + b;//h
             }
         }
         return c;
