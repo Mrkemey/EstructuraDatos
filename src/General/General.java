@@ -18,72 +18,19 @@ public class General {
         for (int i = 0; i < n; i++) {
             R[i][0] = i;
             R[i][1] = (int) (2 * (Math.pow(i, 2)) + 2);
-            //holas
         }
 
         return R;
     }
 
-    public static int mutlRusa(int a, int b) {
-
-        if (a == 1) {
-            return b;
-        } else {
-            if (a % 2 != 0) {
-                return b + mutlRusa(a / 2, b * 2);
-            } else {
-                return mutlRusa(a / 2, b * 2);
-            }
-
-        }
-    }
-
     public static int multRusa(int a, int b) {
         int c = 0;
-        for (; a != 0; a /= 2,b*=2) {
+        for (; a != 0; a /= 2, b *= 2) {
             if (a % 2 != 0) {
-                c = c + b;//h
+                c = c + b;
             }
         }
         return c;
-    }
-
-    public static boolean perf(int n, int d, int s) {
-        if (d == 0) {
-            return n == s;
-        } else {
-            if (n % d == 0) {
-                s += d;
-                return perf(n, d - 1, s);
-            } else {
-                return perf(n, d - 1, s);
-            }
-        }
-    }
-
-    public static int sumaDig(int n) {
-        if (n < 10) {
-            return n;
-        } else {
-            return n % 10 + sumaDig(n / 10);
-        }
-    }
-
-    public static int invDig(int n, int p) {
-        if (n < 10) {
-            return n;
-        } else {
-            return (int) ((n % 10) * Math.pow(10, p) + invDig(n / 10, p - 1));
-        }
-    }
-
-    public static int invDig(int n) {
-        int p = (n + "").length() - 1;
-        if (n < 10) {
-            return n;
-        } else {
-            return (int) ((n % 10) * Math.pow(10, p) + invDig(n / 10));
-        }
     }
 
     public static int[][] suma(int A[][], int B[][], int n, int m) {
@@ -170,8 +117,7 @@ public class General {
     }
 
     public static int[] repArray(int A[], int B[]) {
-        int t = 0;
-        int n = 0;
+        int t = 0, n;
         if (A.length <= B.length) {
             n = A.length;
         } else {
@@ -256,6 +202,60 @@ public class General {
 
             System.out.println(n2);
 
+        }
+    }
+
+//------------------------------------------------------------------------------
+    //Recursivos
+    public static int mutlRusa(int a, int b) {
+
+        if (a == 1) {
+            return b;
+        } else {
+            if (a % 2 != 0) {
+                return b + mutlRusa(a / 2, b * 2);
+            } else {
+                return mutlRusa(a / 2, b * 2);
+            }
+
+        }
+    }
+
+    public static boolean perf(int n, int d, int s) {
+        if (d == 0) {
+            return n == s;
+        } else {
+            if (n % d == 0) {
+                s += d;
+                return perf(n, d - 1, s);
+            } else {
+                return perf(n, d - 1, s);
+            }
+        }
+    }
+
+    public static int sumaDig(int n) {
+        if (n < 10) {
+            return n;
+        } else {
+            return n % 10 + sumaDig(n / 10);
+        }
+    }
+
+    public static int invDig(int n, int p) {
+        if (n < 10) {
+            return n;
+        } else {
+            return (int) ((n % 10) * Math.pow(10, p) + invDig(n / 10, p - 1));
+        }
+    }
+
+    public static int invDig(int n) {
+        int p = (n + "").length() - 1;
+        if (n < 10) {
+            return n;
+        } else {
+            return (int) ((n % 10) * Math.pow(10, p) + invDig(n / 10));
         }
     }
 
@@ -398,7 +398,7 @@ public class General {
 //    long endTime = System.nanoTime() - startTime;
 //    System.out.println("Duración " + endTime + " Nanosegundos.");
 //generatabla(5);
-        JOptionPane.showMessageDialog(null, multRusa(4, 12));
+        JOptionPane.showMessageDialog(null,summ51N(20));
     }
 
     //N numeros d la serie de fibonasi
