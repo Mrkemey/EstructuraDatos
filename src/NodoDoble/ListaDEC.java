@@ -48,5 +48,25 @@ public class ListaDEC {
         }
         return null;
     }
+    public boolean eliminar(int e){
+        NodoDEC b=buscar(e);
+        if (b==null) {
+            return false;
+        }
+        if (b==inicio) {
+            if (b.getAnt()==inicio&&b.getSig()==inicio) {
+                inicio=null;
+            } else {
+                inicio=inicio.getSig();
+                inicio.setAnt(b.getAnt());
+                inicio.getAnt().setSig(inicio);
+            }
+            
+        }else{
+            b.getAnt().setSig(b.getSig());
+            b.getSig().setAnt(b.getAnt());
+        }
+        return true;
+    }
 
 }
