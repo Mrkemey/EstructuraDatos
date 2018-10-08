@@ -44,7 +44,7 @@ public class NodoDE {
 
     @Override
     public String toString() {
-        return "____{" + "info=" + info + "}--";
+        return  info + "";
     }
     
 }

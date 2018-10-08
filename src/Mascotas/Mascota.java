@@ -10,8 +10,9 @@ package Mascotas;
  * @author jmanu
  */
 public class Mascota {
-private String nombre,especie;
-private int edad;
+
+    private String nombre, especie;
+    private int edad;
 
     public Mascota() {
     }
@@ -48,8 +49,7 @@ private int edad;
 
     @Override
     public String toString() {
-        return "Mascota{" + nombre + "-" + especie + '}';
+        return nombre + "-" + especie + "-" + edad;
     }
-    
 
 }
